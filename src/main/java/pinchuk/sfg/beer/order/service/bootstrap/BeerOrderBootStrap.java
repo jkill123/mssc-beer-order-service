@@ -1,5 +1,6 @@
 package pinchuk.sfg.beer.order.service.bootstrap;
 
+import lombok.extern.slf4j.Slf4j;
 import pinchuk.sfg.beer.order.service.domain.Customer;
 import pinchuk.sfg.beer.order.service.repositories.CustomerRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.UUID;
  * @author Pinchuk Yevhen
  * @created 18/03/2020 - 10:34
  */
+@Slf4j
 @RequiredArgsConstructor
 @Component
 public class BeerOrderBootStrap implements CommandLineRunner {
@@ -28,11 +30,13 @@ public class BeerOrderBootStrap implements CommandLineRunner {
     }
 
     private void loadCustomerData() {
-        if (customerRepository.count() == 0) {
-            customerRepository.save(Customer.builder()
+        if (customerRepository.findAllByCustomerNameLike(BeerOrderBootStrap.TASTING_ROOM) .size() == 0) {
+            Customer savedCustomer = customerRepository.saveAndFlush(Customer.builder()
                     .customerName(TASTING_ROOM)
                     .apiKey(UUID.randomUUID())
                     .build());
+
+            log.debug("Tasting Room Customer Id: " + savedCustomer.getId().toString());
         }
     }
 }
