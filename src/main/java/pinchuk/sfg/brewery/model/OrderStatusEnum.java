@@ -1,5 +1,5 @@
 
-package pinchuk.sfg.beer.order.service.web.model;
+package pinchuk.sfg.brewery.model;
 
 public enum OrderStatusEnum {
     NEW, READY, PICKED_UP

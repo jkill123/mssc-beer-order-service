@@ -1,6 +1,6 @@
 package pinchuk.sfg.beer.order.service.services.beer;
 
-import pinchuk.sfg.beer.order.service.web.model.BeerDto;
+import pinchuk.sfg.brewery.model.BeerDto;
 
 import java.util.Optional;
 import java.util.UUID;

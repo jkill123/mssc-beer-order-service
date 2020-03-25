@@ -1,5 +1,5 @@
 
-package pinchuk.sfg.beer.order.service.web.model;
+package pinchuk.sfg.brewery.model;
 
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;

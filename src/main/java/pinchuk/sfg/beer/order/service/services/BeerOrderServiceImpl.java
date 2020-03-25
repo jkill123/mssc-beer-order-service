@@ -14,8 +14,8 @@ import pinchuk.sfg.beer.order.service.domain.Customer;
 import pinchuk.sfg.beer.order.service.repositories.BeerOrderRepository;
 import pinchuk.sfg.beer.order.service.repositories.CustomerRepository;
 import pinchuk.sfg.beer.order.service.web.mappers.BeerOrderMapper;
-import pinchuk.sfg.beer.order.service.web.model.BeerOrderDto;
-import pinchuk.sfg.beer.order.service.web.model.BeerOrderPagedList;
+import pinchuk.sfg.brewery.model.BeerOrderDto;
+import pinchuk.sfg.brewery.model.BeerOrderPagedList;
 
 import java.util.Optional;
 import java.util.UUID;

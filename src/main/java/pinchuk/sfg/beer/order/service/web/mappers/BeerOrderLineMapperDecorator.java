@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import pinchuk.sfg.beer.order.service.domain.BeerOrderLine;
 import pinchuk.sfg.beer.order.service.services.beer.BeerService;
-import pinchuk.sfg.beer.order.service.web.model.BeerDto;
-import pinchuk.sfg.beer.order.service.web.model.BeerOrderLineDto;
+import pinchuk.sfg.brewery.model.BeerDto;
+import pinchuk.sfg.brewery.model.BeerOrderLineDto;
 
 import java.util.Optional;
 

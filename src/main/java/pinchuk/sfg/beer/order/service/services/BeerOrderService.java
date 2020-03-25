@@ -2,8 +2,8 @@
 package pinchuk.sfg.beer.order.service.services;
 
 
-import pinchuk.sfg.beer.order.service.web.model.BeerOrderDto;
-import pinchuk.sfg.beer.order.service.web.model.BeerOrderPagedList;
+import pinchuk.sfg.brewery.model.BeerOrderDto;
+import pinchuk.sfg.brewery.model.BeerOrderPagedList;
 import org.springframework.data.domain.Pageable;
 
 import java.util.UUID;

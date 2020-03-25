@@ -2,8 +2,8 @@
 package pinchuk.sfg.beer.order.service.web.controllers;
 
 import pinchuk.sfg.beer.order.service.services.BeerOrderService;
-import pinchuk.sfg.beer.order.service.web.model.BeerOrderDto;
-import pinchuk.sfg.beer.order.service.web.model.BeerOrderPagedList;
+import pinchuk.sfg.brewery.model.BeerOrderDto;
+import pinchuk.sfg.brewery.model.BeerOrderPagedList;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
