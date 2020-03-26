@@ -10,7 +10,6 @@ import java.util.UUID;
  * @created 25/03/2020 - 22:11
  */
 public interface BeerOrderManager {
-
     BeerOrder newBeerOrder(BeerOrder beerOrder);
 
     void processValidationResult(UUID beerOrderId, Boolean isValid);
@@ -24,3 +23,4 @@ public interface BeerOrderManager {
     void beerOrderPickedUp(UUID id);
 
     void cancelOrder(UUID id);}
+
