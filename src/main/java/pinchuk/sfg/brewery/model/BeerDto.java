@@ -10,10 +10,6 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-/**
- * @author Pinchuk Yevhen
- * @created 18/03/2020 - 21:44
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

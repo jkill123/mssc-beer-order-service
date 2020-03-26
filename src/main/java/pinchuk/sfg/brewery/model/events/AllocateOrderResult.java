@@ -1,15 +1,11 @@
-package pinchuk.sfg.brewery.events;
+package pinchuk.sfg.brewery.model.events;
 
+import pinchuk.sfg.brewery.model.BeerOrderDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pinchuk.sfg.brewery.model.BeerOrderDto;
 
-/**
- * @author Pinchuk Yevhen
- * @created 26/03/2020 - 20:44
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

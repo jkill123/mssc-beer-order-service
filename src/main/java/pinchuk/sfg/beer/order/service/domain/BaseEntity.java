@@ -28,11 +28,6 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-/**
- * @author Pinchuk Yevhen
- * @created 18/03/2020 - 10:34
- */
-
 @Setter
 @Getter
 @NoArgsConstructor

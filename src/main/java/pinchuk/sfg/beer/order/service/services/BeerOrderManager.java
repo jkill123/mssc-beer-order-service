@@ -5,11 +5,8 @@ import pinchuk.sfg.brewery.model.BeerOrderDto;
 
 import java.util.UUID;
 
-/**
- * @author Pinchuk Yevhen
- * @created 25/03/2020 - 22:11
- */
 public interface BeerOrderManager {
+
     BeerOrder newBeerOrder(BeerOrder beerOrder);
 
     void processValidationResult(UUID beerOrderId, Boolean isValid);
@@ -22,5 +19,5 @@ public interface BeerOrderManager {
 
     void beerOrderPickedUp(UUID id);
 
-    void cancelOrder(UUID id);}
-
+    void cancelOrder(UUID id);
+}

@@ -1,10 +1,10 @@
 
 package pinchuk.sfg.beer.order.service.web.mappers;
 
-import org.mapstruct.Mapping;
 import pinchuk.sfg.beer.order.service.domain.BeerOrder;
 import pinchuk.sfg.brewery.model.BeerOrderDto;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(uses = {DateMapper.class, BeerOrderLineMapper.class})
 public interface BeerOrderMapper {

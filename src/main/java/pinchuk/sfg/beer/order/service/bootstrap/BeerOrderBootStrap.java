@@ -1,18 +1,15 @@
 package pinchuk.sfg.beer.order.service.bootstrap;
 
-import lombok.extern.slf4j.Slf4j;
 import pinchuk.sfg.beer.order.service.domain.Customer;
 import pinchuk.sfg.beer.order.service.repositories.CustomerRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-/**
- * @author Pinchuk Yevhen
- * @created 18/03/2020 - 10:34
- */
+
 @Slf4j
 @RequiredArgsConstructor
 @Component

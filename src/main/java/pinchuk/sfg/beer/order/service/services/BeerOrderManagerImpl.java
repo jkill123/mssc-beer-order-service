@@ -1,5 +1,11 @@
 package pinchuk.sfg.beer.order.service.services;
 
+import pinchuk.sfg.beer.order.service.domain.BeerOrder;
+import pinchuk.sfg.beer.order.service.domain.BeerOrderEventEnum;
+import pinchuk.sfg.beer.order.service.domain.BeerOrderStatusEnum;
+import pinchuk.sfg.beer.order.service.repositories.BeerOrderRepository;
+import pinchuk.sfg.beer.order.service.sm.BeerOrderStateChangeInterceptor;
+import pinchuk.sfg.brewery.model.BeerOrderDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.Message;
@@ -9,23 +15,12 @@ import org.springframework.statemachine.config.StateMachineFactory;
 import org.springframework.statemachine.support.DefaultStateMachineContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pinchuk.sfg.beer.order.service.domain.BeerOrder;
-import pinchuk.sfg.beer.order.service.domain.BeerOrderEventEnum;
-import pinchuk.sfg.beer.order.service.domain.BeerOrderStatusEnum;
-import pinchuk.sfg.beer.order.service.repositories.BeerOrderRepository;
-import pinchuk.sfg.beer.order.service.sm.BeerOrderStateChangeInterceptor;
-import pinchuk.sfg.brewery.model.BeerOrderDto;
 
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
-/**
- * @author Pinchuk Yevhen
- * @created 25/03/2020 - 22:12
- */
 @Slf4j
 @RequiredArgsConstructor
 @Service

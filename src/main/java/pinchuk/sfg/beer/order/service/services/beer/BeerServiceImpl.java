@@ -1,18 +1,14 @@
 package pinchuk.sfg.beer.order.service.services.beer;
 
+import pinchuk.sfg.brewery.model.BeerDto;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import pinchuk.sfg.brewery.model.BeerDto;
 
 import java.util.Optional;
 import java.util.UUID;
 
-/**
- * @author Pinchuk Yevhen
- * @created 18/03/2020 - 21:43
- */
 @ConfigurationProperties(prefix = "sfg.brewery", ignoreUnknownFields = false)
 @Service
 public class BeerServiceImpl implements BeerService {

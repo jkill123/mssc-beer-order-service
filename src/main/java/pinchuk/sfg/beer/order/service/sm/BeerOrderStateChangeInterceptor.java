@@ -1,5 +1,10 @@
 package pinchuk.sfg.beer.order.service.sm;
 
+import pinchuk.sfg.beer.order.service.domain.BeerOrder;
+import pinchuk.sfg.beer.order.service.domain.BeerOrderEventEnum;
+import pinchuk.sfg.beer.order.service.domain.BeerOrderStatusEnum;
+import pinchuk.sfg.beer.order.service.repositories.BeerOrderRepository;
+import pinchuk.sfg.beer.order.service.services.BeerOrderManagerImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.Message;
@@ -9,19 +14,10 @@ import org.springframework.statemachine.support.StateMachineInterceptorAdapter;
 import org.springframework.statemachine.transition.Transition;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import pinchuk.sfg.beer.order.service.domain.BeerOrder;
-import pinchuk.sfg.beer.order.service.domain.BeerOrderEventEnum;
-import pinchuk.sfg.beer.order.service.domain.BeerOrderStatusEnum;
-import pinchuk.sfg.beer.order.service.repositories.BeerOrderRepository;
-import pinchuk.sfg.beer.order.service.services.BeerOrderManagerImpl;
 
 import java.util.Optional;
 import java.util.UUID;
 
-/**
- * @author Pinchuk Yevhen
- * @created 25/03/2020 - 23:16
- */
 @Slf4j
 @Component
 @RequiredArgsConstructor

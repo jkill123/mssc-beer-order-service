@@ -1,4 +1,4 @@
-package pinchuk.sfg.brewery.events;
+package pinchuk.sfg.brewery.model.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,10 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
-/**
- * @author Pinchuk Yevhen
- * @created 26/03/2020 - 10:22
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

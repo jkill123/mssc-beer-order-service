@@ -7,10 +7,7 @@ import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-/**
- * @author Pinchuk Yevhen
- * @created 18/03/2020 - 10:34
- */
+
 @EnableScheduling
 @EnableAsync
 @Configuration

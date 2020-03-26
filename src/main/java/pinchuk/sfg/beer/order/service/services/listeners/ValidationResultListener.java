@@ -1,18 +1,17 @@
 package pinchuk.sfg.beer.order.service.services.listeners;
 
+import pinchuk.sfg.beer.order.service.config.JmsConfig;
+import pinchuk.sfg.beer.order.service.services.BeerOrderManager;
+import pinchuk.sfg.brewery.model.events.ValidateOrderResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
-import pinchuk.sfg.beer.order.service.config.JmsConfig;
-import pinchuk.sfg.beer.order.service.services.BeerOrderManager;
-import pinchuk.sfg.brewery.events.ValidateOrderResult;
 
 import java.util.UUID;
 
 /**
- * @author Pinchuk Yevhen
- * @created 26/03/2020 - 10:47
+ * Created by jt on 12/2/19.
  */
 @Slf4j
 @RequiredArgsConstructor

@@ -1,18 +1,14 @@
 package pinchuk.sfg.beer.order.service.web.mappers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import pinchuk.sfg.beer.order.service.domain.BeerOrderLine;
 import pinchuk.sfg.beer.order.service.services.beer.BeerService;
 import pinchuk.sfg.brewery.model.BeerDto;
 import pinchuk.sfg.brewery.model.BeerOrderLineDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Optional;
 
-/**
- * @author Pinchuk Yevhen
- * @created 18/03/2020 - 22:01
- */
 public abstract class BeerOrderLineMapperDecorator implements BeerOrderLineMapper {
 
     private BeerService beerService;

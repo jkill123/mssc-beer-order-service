@@ -1,8 +1,8 @@
 package pinchuk.sfg.beer.order.service.web.mappers;
 
-import org.mapstruct.DecoratedWith;
 import pinchuk.sfg.beer.order.service.domain.BeerOrderLine;
 import pinchuk.sfg.brewery.model.BeerOrderLineDto;
+import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 
 @Mapper(uses = {DateMapper.class})
