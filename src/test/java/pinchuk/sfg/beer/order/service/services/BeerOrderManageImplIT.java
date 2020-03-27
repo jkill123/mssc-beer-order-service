@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import pinchuk.sfg.beer.order.service.domain.BeerOrder;
 import pinchuk.sfg.beer.order.service.domain.BeerOrderLine;
+import pinchuk.sfg.beer.order.service.domain.BeerOrderStatusEnum;
 import pinchuk.sfg.beer.order.service.domain.Customer;
 import pinchuk.sfg.beer.order.service.repositories.BeerOrderRepository;
 import pinchuk.sfg.beer.order.service.repositories.CustomerRepository;
@@ -27,9 +28,9 @@ import static com.github.jenspiegsa.wiremockextension.ManagedWireMockServer.with
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.okJson;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static pinchuk.sfg.beer.order.service.domain.BeerOrderStatusEnum.ALLOCATED;
 
 /**
  * @author Pinchuk Yevhen
@@ -77,18 +78,35 @@ public class BeerOrderManageImplIT {
     }
 
     @Test
-    void testNewToAllocated() throws JsonProcessingException {
-
+    void testNewToAllocated() throws JsonProcessingException, InterruptedException {
         BeerDto beerDto = BeerDto.builder().id(beerId).upc("12345").build();
-//        BeerPagedList list = new BeerPagedList(List.of(beerDto));
 
         wireMockServer.stubFor(get(BeerServiceImpl.BEER_UPC_PATH_V1 + "12345")
-            .willReturn(okJson(objectMapper.writeValueAsString(beerDto))));
-        BeerOrder beerOrder = createBeerOrder();
-        BeerOrder savedBeer = beerOrderManager.newBeerOrder(beerOrder);
+                .willReturn(okJson(objectMapper.writeValueAsString(beerDto))));
 
-        assertNotNull(savedBeer);
-        assertEquals(ALLOCATED, savedBeer.getOrderStatus());
+        BeerOrder beerOrder = createBeerOrder();
+
+        BeerOrder savedBeerOrder = beerOrderManager.newBeerOrder(beerOrder);
+
+        await().untilAsserted(() -> {
+            BeerOrder foundOrder = beerOrderRepository.findById(beerOrder.getId()).get();
+
+            assertEquals(BeerOrderStatusEnum.ALLOCATED, foundOrder.getOrderStatus());
+        });
+
+        await().untilAsserted(() -> {
+            BeerOrder foundOrder = beerOrderRepository.findById(beerOrder.getId()).get();
+            BeerOrderLine line = foundOrder.getBeerOrderLines().iterator().next();
+            assertEquals(line.getOrderQuantity(), line.getQuantityAllocated());
+        });
+
+        BeerOrder savedBeerOrder2 = beerOrderRepository.findById(savedBeerOrder.getId()).get();
+
+        assertNotNull(savedBeerOrder2);
+        assertEquals(BeerOrderStatusEnum.ALLOCATED, savedBeerOrder2.getOrderStatus());
+        savedBeerOrder2.getBeerOrderLines().forEach(line -> {
+            assertEquals(line.getOrderQuantity(), line.getQuantityAllocated());
+        });
     }
 
     public BeerOrder createBeerOrder() {
