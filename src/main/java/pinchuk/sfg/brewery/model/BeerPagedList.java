@@ -38,3 +38,4 @@ public class BeerPagedList extends PageImpl<BeerDto> implements Serializable {
         super(content);
     }
 }
+
